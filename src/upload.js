@@ -5,6 +5,7 @@ var __defaultOptions = {
     preFetchUrl: false,
     name: 'file',
     accept: null,
+    headers: {},
     body: {},
     dropzoneId: null,
     onSelect: null,
@@ -133,7 +134,7 @@ function _init(name, options) {
     instance.options = Object.assign({}, __upload.options, options);
 
     instance.input = _initInput.call(instance);
-    
+
     instance.dropzone = _initDropzone.call(instance);
 
     _bind.call(instance);
@@ -154,7 +155,7 @@ function _bind() {
 
 function _option(key, val) {
     this.options[key] = val;
-    
+
     if (key === 'dropzone') {
         _destroyDropzone.call(this);
 
@@ -189,7 +190,7 @@ function _initInput() {
     input.accept = this.options.accept ? this.options.accept : "*/*";
 
     input.style.display = 'none';
-    
+
     input.onchange = function () {
         _select.call(_this, input.files);
 
@@ -217,7 +218,7 @@ function _destroyInput() {
 function _initDropzone() {
     var dropzone,
         _this = this;
-        
+
     dropzone = {
         $el: document.getElementById(this.options.dropzoneId),
         counter: 0,
@@ -230,17 +231,17 @@ function _initDropzone() {
     if (dropzone.$el) {
         dropzone.dragenter = function(e) {
             __stop(e);
-            
+
             _this.dropzone.counter++;
-            
+
             _this.$vm.dropzone.active = true;
         };
 
         dropzone.dragover = function(e) {
             __stop(e);
-            
-            e.dataTransfer.dropEffect = 'copy'; 
-            
+
+            e.dataTransfer.dropEffect = 'copy';
+
             _this.$vm.dropzone.active = true;
         };
 
@@ -525,7 +526,7 @@ function _process() {
             for (i = 0, ii = this.$vm.files.all.length; i < ii; i++) {
                 this.$vm.files.all[i].active = false;
             }
-            
+
             this.onEnd();
         }
 
@@ -542,7 +543,7 @@ function _process() {
     // to officially deal with an error file.
     if (!_valid.call(this, file)) {
         _move.call(this, file, 'error');
-        
+
         this.onError(file);
 
         _process.call(this);
@@ -551,7 +552,7 @@ function _process() {
     }
 
     this.$vm.meta.state = 'uploading';
-    
+
     _upload.call(this, file);
 
     _process.call(this);
@@ -561,6 +562,7 @@ function _upload(file) {
     var key,
         formData,
         request,
+        headers = file.$instance.options.headers || {},
         _this = this;
 
     file.sending = true;
@@ -572,6 +574,7 @@ function _upload(file) {
             request = _this.options.http({
                 method: 'get',
                 url: file.$instance.options.url,
+                headers,
                 error: reject,
                 body: {
                     name: file.name,
@@ -596,15 +599,16 @@ function _upload(file) {
     })
     .then(function (data) {
         formData = new FormData();
-            
+
         formData.append(_this.options.name, file.$file);
-        
+
         for (key in file.$instance.options.body) {
             formData.append(key, file.$instance.options.body[key]);
         }
 
         request = _this.options.http(Object.assign({
             url: file.$instance.options.url,
+            headers,
             body: formData,
             progress: function (e) {
                 file.percentComplete = e.lengthComputable ? Math.ceil(e.loaded / e.total * 100) : 0;
@@ -622,7 +626,7 @@ function _upload(file) {
 
             success: function (res) {
                 file.sending = false;
-                
+
                 _move.call(_this, file, 'success');
 
                 _this.onSuccess(file, res);
@@ -640,7 +644,7 @@ function _upload(file) {
                 error.file = file;
 
                 _addError.call(_this, error);
-                
+
                 _move.call(_this, file, 'error');
 
                 _this.onError(file, res);
@@ -660,7 +664,7 @@ function _percent() {
         totalFilesActive;
 
     totalFilesActive = 0;
-    
+
     for (i = 0, ii = this.$vm.files.all.length; i < ii; i++) {
         if (this.$vm.files.all[i].active) {
             totalFilesActive++;
@@ -668,7 +672,7 @@ function _percent() {
     }
 
     percentComplete = (totalFilesActive - this.$vm.files.queue.length - this.$vm.files.progress.length) * 100;
-    
+
     for (i = 0, ii = this.$vm.files.progress.length; i < ii; i++) {
         percentComplete += this.$vm.files.progress[i].percentComplete;
     }
@@ -680,7 +684,7 @@ function Upload(Vue, options) {
     __upload = this;
 
     options = options || {};
-    
+
     this.plugins = options.plugins;
     this.drivers = options.drivers;
     this.options = Object.assign({}, __defaultOptions, options);
@@ -728,7 +732,7 @@ Upload.prototype.start = function (name) {
     _create(name);
 
     _process.call(__upload.state.instances[name]);
-}; 
+};
 
 Upload.prototype.files = function (name) {
     _create(name);

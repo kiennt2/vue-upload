@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "name": "@websanova/vue-upload",
+    "name": "@websanova/vue-upload/kiennt-fork",
     "description": "A simple, light weight and intuitive upload control for Vue.js.",
     "keywords": ["vue", "vue.js", "vuejs", "plugin", "file", "image", "img", "audio", "png", "jpeg", "upload", "dropzone"],
     "homepage": "https://websanova.com/docs/vue-upload",
@@ -16,7 +16,7 @@
     "jsdelivr": "dist/v3/vue-upload.min.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/websanova/vue-upload"
+        "url": "https://github.com/kiennt2/vue-upload"
     },
     "licenses": "MIT, GPL",
     "scripts": {

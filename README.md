@@ -1,3 +1,7 @@
+# Change
+
+* (added) headers option
+
 # Vue Upload
 
 A simple, light weight and intuitive upload control for Vue.js.
