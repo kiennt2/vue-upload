@@ -1,0 +1,77 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="62">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="predictcreator" />
+            <item index="7" class="java.lang.String" itemvalue="predict-creator" />
+            <item index="8" class="java.lang.String" itemvalue="ion-page" />
+            <item index="9" class="java.lang.String" itemvalue="ionapp" />
+            <item index="10" class="java.lang.String" itemvalue="ion-router-outlet" />
+            <item index="11" class="java.lang.String" itemvalue="ion-icon" />
+            <item index="12" class="java.lang.String" itemvalue="mainnav" />
+            <item index="13" class="java.lang.String" itemvalue="ion-row" />
+            <item index="14" class="java.lang.String" itemvalue="ion-col" />
+            <item index="15" class="java.lang.String" itemvalue="ion-card-header" />
+            <item index="16" class="java.lang.String" itemvalue="ion-card-content" />
+            <item index="17" class="java.lang.String" itemvalue="confirm-modal" />
+            <item index="18" class="java.lang.String" itemvalue="application-create" />
+            <item index="19" class="java.lang.String" itemvalue="vuetableheader" />
+            <item index="20" class="java.lang.String" itemvalue="vuetablebody" />
+            <item index="21" class="java.lang.String" itemvalue="pagination" />
+            <item index="22" class="java.lang.String" itemvalue="vue-upload" />
+            <item index="23" class="java.lang.String" itemvalue="trainmodal" />
+            <item index="24" class="java.lang.String" itemvalue="ion-text" />
+            <item index="25" class="java.lang.String" itemvalue="ion-modal" />
+            <item index="26" class="java.lang.String" itemvalue="ion-footer" />
+            <item index="27" class="java.lang.String" itemvalue="ion-button" />
+            <item index="28" class="java.lang.String" itemvalue="ion-list" />
+            <item index="29" class="java.lang.String" itemvalue="ion-item" />
+            <item index="30" class="java.lang.String" itemvalue="ion-label" />
+            <item index="31" class="java.lang.String" itemvalue="ion-grid" />
+            <item index="32" class="java.lang.String" itemvalue="ion-card" />
+            <item index="33" class="java.lang.String" itemvalue="ion-header" />
+            <item index="34" class="java.lang.String" itemvalue="ion-card-title" />
+            <item index="35" class="java.lang.String" itemvalue="ion-toolbar" />
+            <item index="36" class="java.lang.String" itemvalue="predictdetailsicon" />
+            <item index="37" class="java.lang.String" itemvalue="applicationocr" />
+            <item index="38" class="java.lang.String" itemvalue="fedropshadow" />
+            <item index="39" class="java.lang.String" itemvalue="v-field" />
+            <item index="40" class="java.lang.String" itemvalue="v-error-message" />
+            <item index="41" class="java.lang.String" itemvalue="v-form" />
+            <item index="42" class="java.lang.String" itemvalue="applicationcrop" />
+            <item index="43" class="java.lang.String" itemvalue="roles-overview" />
+            <item index="44" class="java.lang.String" itemvalue="usermenu" />
+            <item index="45" class="java.lang.String" itemvalue="languageoptions" />
+            <item index="46" class="java.lang.String" itemvalue="ion-toast" />
+            <item index="47" class="java.lang.String" itemvalue="ion-popover" />
+            <item index="48" class="java.lang.String" itemvalue="ion-progress-bar" />
+            <item index="49" class="java.lang.String" itemvalue="appsetting" />
+            <item index="50" class="java.lang.String" itemvalue="appbilling" />
+            <item index="51" class="java.lang.String" itemvalue="ion-segment" />
+            <item index="52" class="java.lang.String" itemvalue="contactsupport" />
+            <item index="53" class="java.lang.String" itemvalue="sharing" />
+            <item index="54" class="java.lang.String" itemvalue="appsharing" />
+            <item index="55" class="java.lang.String" itemvalue="autosavenotify" />
+            <item index="56" class="java.lang.String" itemvalue="ion-select" />
+            <item index="57" class="java.lang.String" itemvalue="trainconfig" />
+            <item index="58" class="java.lang.String" itemvalue="vueupload" />
+            <item index="59" class="java.lang.String" itemvalue="appclassify" />
+            <item index="60" class="java.lang.String" itemvalue="vueuploadcomponent" />
+            <item index="61" class="java.lang.String" itemvalue="ion-radio-group" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
